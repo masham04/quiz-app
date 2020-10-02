@@ -41,13 +41,28 @@ let [result, setresult] = useState(false);
   }
  }
  if(result){
-   return(
-     <div className='container'>
-       <h2>Result</h2>
-       <h3>Your Result is {score} out of {quiz.length}</h3>
-     </div>
-   )
- }
+  if(score === quiz.length){
+    return(
+      <div className='container'>
+          <div className='content'>
+          <h1 className='result'>Result</h1>
+          <h2 className='result'>Congratulation! You Score 5 out of 5.</h2>
+          </div>
+      </div>
+    )
+  }
+  else{
+    return(
+      <div className='container'>
+          <div className='content'>
+          <h1 className='result'>Result</h1>
+          <h3 className='result'>Your result is {score} out of {quiz.length}.</h3>
+          </div>
+      </div>
+    )
+  }
+  
+}
  if(!quiz.length) return <h2 className='load'>Loading...</h2>
 
 
