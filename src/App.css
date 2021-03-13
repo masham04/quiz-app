@@ -1,5 +1,8 @@
 body{
-    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    background-image: url('./components/background.jpg');
+    color: white;
+    font-family: 'DM Sans', sans-serif;
 }
 .load{
    text-align: center;
@@ -10,7 +13,7 @@ body{
     margin-top: 40px;
     font-size: 40px;
     font-weight: 900;
-    color: rgb(31, 21, 75);
+    color: white;
 }
 .container{
     width: 50%;
@@ -18,8 +21,6 @@ body{
     position: absolute;
     top: 25%;
     left: 25%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-color: cyan;
     padding: 20px;
   
 }
@@ -36,14 +37,16 @@ input[type=radio]{
     height: 35px;
     float: right;
     cursor: pointer;
-    background-color: rgb(26, 105, 53);
+    background-color: transparent;
     color: white;
-    border: 1px solid rgb(26, 105, 53);
+    border: 1px solid white;
     border-radius: 2px;
     transition: all ease .2s;
 }
 .btn:hover {
-    background-color:  rgb(16, 63, 33);
+    color: black;
+    background-color:  white;
+    opacity: 0.2;
 }
 .result{
     text-align: center;

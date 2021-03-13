@@ -3,7 +3,7 @@ const shuffle = (array: any[]) =>
 [...array].sort(() => Math.random()-0.5)
 
 export const getdata = async(): Promise<actualdata[]> => {
-        const res = await fetch('https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple')
+        const res = await fetch('https://opentdb.com/api.php?amount=6&difficulty=easy&type=multiple')
         const {results} = await res.json();
         const quiz: actualdata[] = results.map((obj: rawdata)=>{
                return{

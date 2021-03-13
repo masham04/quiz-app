@@ -29,12 +29,13 @@ export const Quizcard: React.FC<proptype> = ({
                   checked={selection === opt}
                   onChange={selecthandler}
                 />
+                &nbsp;&nbsp;
                 {opt}
               </label></h4>
             </div>
           );
         })}
-        <input type="submit" className='btn' />
+        <button type="submit" className='btn'>Submit</button>
       </form>
       </div>
     </div>
