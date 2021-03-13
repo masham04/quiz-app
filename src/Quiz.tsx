@@ -11,6 +11,7 @@ export function Quiz() {
   let [current, setcurrent] = useState(1);
   let [score, setscore] = useState(0);
   let [result, setresult] = useState(false);
+  const [seconds, setSeconds] = useState(10);
   console.log(quiz.length)
   useEffect(() => {
     async function fetchdata() {
