@@ -11,8 +11,9 @@ export function Quiz() {
   let [current, setcurrent] = useState(1);
   let [score, setscore] = useState(0);
   let [result, setresult] = useState(false);
-  const [seconds, setSeconds] = useState(10);
-  console.log(quiz.length)
+  
+  localStorage.setItem('marks', `${score}`)
+  
   useEffect(() => {
     async function fetchdata() {
       const question: actualdata[] = await getdata();
@@ -78,6 +79,7 @@ export function Quiz() {
     <div className="App">
       <Header no={current} />
       <Quizcard
+      
         question={quiz[current].question}
         options={quiz[current].options}
         callback={handler}

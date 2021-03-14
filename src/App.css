@@ -16,17 +16,17 @@ body{
     color: white;
 }
 .container{
-    width: 50%;
+    width: 70%;
     height: auto;
-    position: absolute;
-    top: 25%;
-    left: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: 1px solid black; */
     padding: 20px;
   
 }
 .content{
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 input[type=radio]{
     width: 15px;
