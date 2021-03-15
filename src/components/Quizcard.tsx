@@ -11,27 +11,32 @@ export const Quizcard: React.FC<proptype> = ({
   let [seconds, setSeconds] = useState(0);
   let [minutes, setMinutes] = useState(1);
 
+
   const marks = localStorage.getItem("marks");
 
   const selecthandler = (el: any) => {
     setselection(el.target.value);
   };
-
+  if (seconds === 0) {
+    seconds = 59;
+    setSeconds(seconds);
+    minutes--;
+    setMinutes(minutes);
+  }
   useEffect(() => {
-    if (minutes >= 0) {
-      setTimeout(() => setSeconds(seconds - 1), 1000);
+   
+    if (minutes > -1) {
+       setTimeout(() => setSeconds(seconds - 1), 1000);
+       console.log(seconds)
+    }else{
+      console.log('Timeout')
     }
-    if (seconds === 0) {
-      seconds = 59;
-      setSeconds(seconds);
-      minutes--;
-      setMinutes(minutes);
-    }
+    
   }, [seconds, minutes]);
 
   return (
     <div className="container">
-      {seconds === 0 && minutes === 0 ? (
+      {seconds === 59 && minutes < 0 ? (
         <div style={{ textAlign: "center" }}>
         <h1>TimeOver!</h1>
         <h2> Your have scored {marks} out of 5</h2>
@@ -80,6 +85,9 @@ export const Quizcard: React.FC<proptype> = ({
           </form>
         </div>
       )}
+    
     </div>
   );
 };
+
+
