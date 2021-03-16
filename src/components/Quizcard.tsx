@@ -9,7 +9,7 @@ export const Quizcard: React.FC<proptype> = ({
   let [selection, setselection] = useState("");
 
   let [seconds, setSeconds] = useState(0);
-  let [minutes, setMinutes] = useState(1);
+  let [minutes, setMinutes] = useState(25);
 
 
   const marks = localStorage.getItem("marks");
@@ -26,7 +26,7 @@ export const Quizcard: React.FC<proptype> = ({
   useEffect(() => {
    
     if (minutes > -1) {
-       setTimeout(() => setSeconds(seconds - 1), 1000);
+       setTimeout(() => setSeconds(seconds - 1), 10);
        console.log(seconds)
     }else{
       console.log('Timeout')
