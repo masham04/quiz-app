@@ -9,8 +9,7 @@ export const Quizcard: React.FC<proptype> = ({
   let [selection, setselection] = useState("");
 
   let [seconds, setSeconds] = useState(0);
-  let [minutes, setMinutes] = useState(25);
-
+  let [minutes, setMinutes] = useState(1);
 
   const marks = localStorage.getItem("marks");
 
@@ -24,23 +23,21 @@ export const Quizcard: React.FC<proptype> = ({
     setMinutes(minutes);
   }
   useEffect(() => {
-   
     if (minutes > -1) {
-       setTimeout(() => setSeconds(seconds - 1), 10);
-       console.log(seconds)
-    }else{
-      console.log('Timeout')
+      setTimeout(() => setSeconds(seconds - 1), 1000);
+      console.log(seconds);
+    } else {
+      console.log("Timeout");
     }
-    
   }, [seconds, minutes]);
 
   return (
     <div className="container">
       {seconds === 59 && minutes < 0 ? (
         <div style={{ textAlign: "center" }}>
-        <h1>TimeOver!</h1>
-        <h2> Your have scored {marks} out of 5</h2>
-      </div>
+          <h1>TimeOver!</h1>
+          <h2> Your have scored {marks} out of 5</h2>
+        </div>
       ) : (
         <div className="content">
           <div style={{ float: "initial", textAlign: "center" }}>
@@ -85,9 +82,6 @@ export const Quizcard: React.FC<proptype> = ({
           </form>
         </div>
       )}
-    
     </div>
   );
 };
-
-

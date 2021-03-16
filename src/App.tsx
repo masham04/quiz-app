@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 
 function App() {
-  // navigator.serviceWorker.register("/sw.js");
+  navigator.serviceWorker.register("/sw.js");
 
 
   return (
